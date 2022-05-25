@@ -29,6 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/bootstrap.css" rel='stylesheet' type='text/css' /><!-- bootstrap css -->
     <link href="css/style.css" rel='stylesheet' type='text/css' /><!-- custom css -->
     <link href="css/font-awesome.min.css" rel="stylesheet"><!-- fontawesome css -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<!-- //css files -->
 	
 	<!-- google fonts -->
@@ -408,7 +409,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="contact-form">
 			<div class="row">
 				<div class="col-lg-8">
-					<form name="contactform" id="contactform" method="post" action="https://script.google.com/macros/s/AKfycbxFBw7HhZvSQmhNjqKF7RrZ3R6mBn8ysZZjF8WIFIrnEWRUT4rGo9yNavAqSzWjOklAXw/exec" onsubmit="return(validate());" novalidate="novalidate">
+					<form name="contactform" id="contactform" action="" onsubmit="return(validate());" novalidate="novalidate">
 						<div class="row">
 							<div class="form-group col-md-6 ">
 							  <label>Name</label>
@@ -490,23 +491,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- move top -->
 
 	<script>
-        $("#submit-form").submit((e)=>{
-            e.preventDefault()
-            $.ajax({
-                url:"",
-                data:$("#submit-form").serialize(),
-                method:"post",
-                success:function (response){
-                    alert("Form submitted successfully")
-                    window.location.reload()
-                    //window.location.href="https://google.com"
-                },
-                error:function (err){
-                    alert("Something Error")
-    
-                }
-            })
-        })
-    </script>
+	$("#contactform").submit((e)=>{
+		e.preventDefault()
+		$.ajax({
+			url:"https://script.google.com/macros/s/AKfycbxFBw7HhZvSQmhNjqKF7RrZ3R6mBn8ysZZjF8WIFIrnEWRUT4rGo9yNavAqSzWjOklAXw/exec",
+			data:$("#contactform").serialize(),
+			method:"post",
+			success:function (response){
+				alert("Form submitted successfully")
+				window.location.reload()
+				//window.location.href="https://google.com"
+			},
+			error:function (err){
+				alert("Something Error")
+
+			}
+		})
+	})
+</script>
 </body>
 </html>
